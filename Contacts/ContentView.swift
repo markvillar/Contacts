@@ -19,9 +19,8 @@ struct Contact: Hashable {
 class DiffableTableViewController: UITableViewController {
     
     lazy var source: UITableViewDiffableDataSource<SectionType, Contact> = .init(tableView: self.tableView) { (_, indexPath, contact) -> UITableViewCell? in
-        
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = contact.name
+        let cell = ContactCell(style: .default, reuseIdentifier: nil)
+        cell.viewModel.name = contact.name
         return cell
     }
     

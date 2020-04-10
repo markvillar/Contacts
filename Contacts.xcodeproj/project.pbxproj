@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,25 @@
 		4D8889F7244076B4006B0DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8889F6244076B4006B0DE1 /* Assets.xcassets */; };
 		4D8889FA244076B4006B0DE1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D8889F9244076B4006B0DE1 /* Preview Assets.xcassets */; };
 		4D8889FD244076B4006B0DE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8889FB244076B4006B0DE1 /* LaunchScreen.storyboard */; };
+		4D888A07244084EB006B0DE1 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D888A06244084EB006B0DE1 /* ContactCell.swift */; };
+		4D888A0A2440877B006B0DE1 /* LBTATools in Frameworks */ = {isa = PBXBuildFile; productRef = 4D888A092440877B006B0DE1 /* LBTATools */; };
+		4D888A0D24408805006B0DE1 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4D888A0C24408805006B0DE1 /* KingfisherSwiftUI */; };
+		4D888A0E24408805006B0DE1 /* KingfisherSwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 4D888A0C24408805006B0DE1 /* KingfisherSwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4D888A0F24408805006B0DE1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4D888A0E24408805006B0DE1 /* KingfisherSwiftUI in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4D8889ED244076B1006B0DE1 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +42,7 @@
 		4D8889F9244076B4006B0DE1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D8889FC244076B4006B0DE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D8889FE244076B4006B0DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D888A06244084EB006B0DE1 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D888A0D24408805006B0DE1 /* KingfisherSwiftUI in Frameworks */,
+				4D888A0A2440877B006B0DE1 /* LBTATools in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +80,7 @@
 				4D8889F0244076B1006B0DE1 /* AppDelegate.swift */,
 				4D8889F2244076B1006B0DE1 /* SceneDelegate.swift */,
 				4D8889F4244076B1006B0DE1 /* ContentView.swift */,
+				4D888A06244084EB006B0DE1 /* ContactCell.swift */,
 				4D8889F6244076B4006B0DE1 /* Assets.xcassets */,
 				4D8889FB244076B4006B0DE1 /* LaunchScreen.storyboard */,
 				4D8889FE244076B4006B0DE1 /* Info.plist */,
@@ -85,12 +107,17 @@
 				4D8889E9244076B1006B0DE1 /* Sources */,
 				4D8889EA244076B1006B0DE1 /* Frameworks */,
 				4D8889EB244076B1006B0DE1 /* Resources */,
+				4D888A0F24408805006B0DE1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Contacts;
+			packageProductDependencies = (
+				4D888A092440877B006B0DE1 /* LBTATools */,
+				4D888A0C24408805006B0DE1 /* KingfisherSwiftUI */,
+			);
 			productName = Contacts;
 			productReference = 4D8889ED244076B1006B0DE1 /* Contacts.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +146,10 @@
 				Base,
 			);
 			mainGroup = 4D8889E4244076B1006B0DE1;
+			packageReferences = (
+				4D888A082440877B006B0DE1 /* XCRemoteSwiftPackageReference "LBTATools" */,
+				4D888A0B24408805006B0DE1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 4D8889EE244076B1006B0DE1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D888A07244084EB006B0DE1 /* ContactCell.swift in Sources */,
 				4D8889F1244076B1006B0DE1 /* AppDelegate.swift in Sources */,
 				4D8889F3244076B1006B0DE1 /* SceneDelegate.swift in Sources */,
 				4D8889F5244076B1006B0DE1 /* ContentView.swift in Sources */,
@@ -340,6 +372,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4D888A082440877B006B0DE1 /* XCRemoteSwiftPackageReference "LBTATools" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bhlvoong/LBTATools";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.17;
+			};
+		};
+		4D888A0B24408805006B0DE1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.13.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4D888A092440877B006B0DE1 /* LBTATools */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D888A082440877B006B0DE1 /* XCRemoteSwiftPackageReference "LBTATools" */;
+			productName = LBTATools;
+		};
+		4D888A0C24408805006B0DE1 /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D888A0B24408805006B0DE1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4D8889E5244076B1006B0DE1 /* Project object */;
 }
