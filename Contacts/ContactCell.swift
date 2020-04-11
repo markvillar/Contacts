@@ -12,6 +12,7 @@ import KingfisherSwiftUI
 
 class ContactViewModel: ObservableObject {
     @Published var name = ""
+    @Published var image = ""
 }
 
 struct ContactRowView: View {

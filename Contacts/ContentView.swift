@@ -14,6 +14,7 @@ enum SectionType {
 
 struct Contact: Hashable {
     let name: String
+    let image: String
 }
 
 class DiffableTableViewController: UITableViewController {
@@ -36,25 +37,25 @@ class DiffableTableViewController: UITableViewController {
         snapshot.appendSections([.ceo, .athletes, .celebrities])
         
         snapshot.appendItems([
-            .init(name: "Elon Musk"),
-            .init(name: "Bill Gates"),
-            .init(name: "Steve Jobs"),
-            .init(name: "Jeff Bezos"),
-            .init(name: "Tim Cook"),
-            .init(name: "Larry Ellison"),
-            .init(name: "Steve Ballmer")
+            .init(name: "Elon Musk", image: "https://www.biography.com/.image/t_share/MTY2MzU3Nzk2OTM2MjMwNTkx/elon_musk_royal_society.jpg"),
+            .init(name: "Bill Gates", image: "https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X_400x400.jpg"),
+            .init(name: "Steve Jobs", image: "https://www.biography.com/.image/t_share/MTY2MzU3OTcxMTUwODQxNTM1/steve-jobs--david-paul-morrisbloomberg-via-getty-images.jpg"),
+            .init(name: "Jeff Bezos", image: "https://www.proactiveinvestors.com/upload/Article/Image/2018_10/1539710172_bezos.jpg"),
+            .init(name: "Tim Cook", image: "https://www.looktothestars.org/photo/12957-tim-cook/story_half_width.jpg"),
+            .init(name: "Larry Ellison", image: "https://upload.wikimedia.org/wikipedia/commons/0/00/Larry_Ellison_picture.png"),
+            .init(name: "Steve Ballmer", image: "https://cdn2.hubspot.net/hubfs/1716276/API/celebrities/Steve_Ballmer.jpg")
         ], toSection: .ceo)
         
         snapshot.appendItems([
-            .init(name: "Kobe Bryant"),
-            .init(name: "Anthony Davis"),
-            .init(name: "Stephen Curry"),
-            .init(name: "Kevin Love")
+            .init(name: "Kobe Bryant", image: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/110.png"),
+            .init(name: "Anthony Davis", image: "https://playerswiki.com/uploads/thumb/xanthony-davis-300-300.jpeg.pagespeed.ic.ersSsfGAHS.jpg"),
+            .init(name: "Stephen Curry", image: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3975.png"),
+            .init(name: "Kevin Love", image: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3449.png")
         ], toSection: .athletes)
         
         snapshot.appendItems([
-            .init(name: "Keira Knightley"),
-            .init(name: "Dua Lipa")
+            .init(name: "Keira Knightley", image: "https://www.thefamouspeople.com/profiles/images/keira-knightley-3.jpg"),
+            .init(name: "Dua Lipa", image: "https://i.insider.com/5b58c4425ae6b4d6018b457d?width=1100&format=jpeg&auto=webp")
         ], toSection: .celebrities)
         
         source.apply(snapshot)
