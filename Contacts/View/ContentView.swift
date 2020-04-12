@@ -12,11 +12,6 @@ enum SectionType {
     case ceo, athletes, celebrities
 }
 
-struct Contact: Hashable {
-    let name: String
-    let image: String
-}
-
 class DiffableTableViewController: UITableViewController {
     
     lazy var source: UITableViewDiffableDataSource<SectionType, Contact> = .init(tableView: self.tableView) { (_, indexPath, contact) -> UITableViewCell? in
@@ -113,6 +108,6 @@ struct ContentView_Previews: PreviewProvider {
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        DiffableContainer()
     }
 }
