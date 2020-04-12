@@ -12,9 +12,15 @@ enum SectionType {
     case ceo, athletes, celebrities
 }
 
+class ContactSource: UITableViewDiffableDataSource<SectionType, Contact> {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+}
+
 class DiffableTableViewController: UITableViewController {
     
-    lazy var source: UITableViewDiffableDataSource<SectionType, Contact> = .init(tableView: self.tableView) { (_, indexPath, contact) -> UITableViewCell? in
+    lazy var source: ContactSource = .init(tableView: self.tableView) { (_, indexPath, contact) -> UITableViewCell? in
         let cell = ContactCell(style: .default, reuseIdentifier: nil)
         cell.viewModel.name = contact.name
         cell.viewModel.image = contact.image
@@ -26,6 +32,21 @@ class DiffableTableViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         setupSource()
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+            completion(true)
+            
+            var snapshot = self.source.snapshot()
+            
+            guard let contact = self.source.itemIdentifier(for: indexPath) else { return }
+            
+            snapshot.deleteItems([contact])
+            
+            self.source.apply(snapshot)
+        }
+        return .init(actions: [deleteAction])
     }
     
     func setupSource() {
