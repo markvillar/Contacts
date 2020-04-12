@@ -14,7 +14,7 @@ struct ContactRowView: View {
     @ObservedObject var viewModel: ContactViewModel
     
     var body: some View {
-        HStack {
+        HStack(spacing: 16) {
             KFImage(URL(string: viewModel.image))
                 .renderingMode(.original)
                 .resizable()
