@@ -35,7 +35,6 @@ class DiffableTableViewController: UITableViewController {
         snapshot.appendItems([
             .init(name: "Elon Musk", image: "https://www.biography.com/.image/t_share/MTY2MzU3Nzk2OTM2MjMwNTkx/elon_musk_royal_society.jpg"),
             .init(name: "Bill Gates", image: "https://pbs.twimg.com/profile_images/988775660163252226/XpgonN0X_400x400.jpg"),
-            .init(name: "Steve Jobs", image: "https://www.biography.com/.image/t_share/MTY2MzU3OTcxMTUwODQxNTM1/steve-jobs--david-paul-morrisbloomberg-via-getty-images.jpg"),
             .init(name: "Jeff Bezos", image: "https://www.proactiveinvestors.com/upload/Article/Image/2018_10/1539710172_bezos.jpg"),
             .init(name: "Tim Cook", image: "https://www.looktothestars.org/photo/12957-tim-cook/story_half_width.jpg"),
             .init(name: "Larry Ellison", image: "https://upload.wikimedia.org/wikipedia/commons/0/00/Larry_Ellison_picture.png"),
@@ -43,15 +42,14 @@ class DiffableTableViewController: UITableViewController {
         ], toSection: .ceo)
         
         snapshot.appendItems([
-            .init(name: "Kobe Bryant", image: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/110.png"),
+            .init(name: "Kobe Bryant", image: "https://lh3.googleusercontent.com/proxy/naTLCrAKQeztNSlb9t9-VEm7mAKBTQeI7CPDW3jP83HofAgIbKLPrI8uQ5g46dZxFsi53fuPiGvHn1BkQj-lP8lP_zPi52sPw7GRWQ7Oe7_1eRYAxCjKxarvJntMke5-CHs_go0B1lj2BoE4OvMYh9Nkt1s4W3NyXyO963OK_-LF"),
             .init(name: "Anthony Davis", image: "https://playerswiki.com/uploads/thumb/xanthony-davis-300-300.jpeg.pagespeed.ic.ersSsfGAHS.jpg"),
-            .init(name: "Stephen Curry", image: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3975.png"),
-            .init(name: "Kevin Love", image: "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3449.png")
+            .init(name: "Stephen Curry", image: "https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5cfeafe234a5c4000847fe0b%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D2262%26cropX2%3D3516%26cropY1%3D640%26cropY2%3D1894")
         ], toSection: .athletes)
         
         snapshot.appendItems([
-            .init(name: "Keira Knightley", image: "https://www.thefamouspeople.com/profiles/images/keira-knightley-3.jpg"),
-            .init(name: "Dua Lipa", image: "https://i.insider.com/5b58c4425ae6b4d6018b457d?width=1100&format=jpeg&auto=webp")
+            .init(name: "Daniel Craig", image: "https://scontent-lga3-1.cdninstagram.com/v/t51.2885-15/e15/c1.0.1078.1078a/s640x640/81473100_890079188097573_3212549203202901355_n.jpg?_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=109&_nc_ohc=vz1d-Vx4BikAX9CZU-x&oh=e3a38feff4955ff5e3d97510b7aa22c9&oe=5ED03108"),
+            .init(name: "Keira Knightley", image: "https://www.biography.com/.image/t_share/MTQyMDAyMDM3MDU0MjUyNzQw/keira-knightley_gettyimages-462189176jpg.jpg")
         ], toSection: .celebrities)
         
         source.apply(snapshot)
