@@ -37,30 +37,30 @@ class DiffableTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (action, view, completion) in
             completion(true)
             
-            var snapshot = self.source.snapshot()
+            guard var snapshot = self?.source.snapshot() else { return }
             
-            guard let contact = self.source.itemIdentifier(for: indexPath) else { return }
+            guard let contact = self?.source.itemIdentifier(for: indexPath) else { return }
             
             snapshot.deleteItems([contact])
             
-            self.source.apply(snapshot)
+            self?.source.apply(snapshot)
         }
         
-        let favouriteAction = UIContextualAction(style: .normal, title: "Favourite") { (_, _, completion) in
+        let favouriteAction = UIContextualAction(style: .normal, title: "Favourite") { [weak self] (_, _, completion) in
             completion(true)
             
-            var snapshot = self.source.snapshot()
+            guard var snapshot = self?.source.snapshot() else { return }
             
-            guard let contact = self.source.itemIdentifier(for: indexPath) else { return }
+            guard let contact = self?.source.itemIdentifier(for: indexPath) else { return }
             
             contact.isFavourite.toggle()
             
             snapshot.reloadItems([contact])
             
-            self.source.apply(snapshot)
+            self?.source.apply(snapshot)
             
         }
         
