@@ -9,7 +9,7 @@
 import SwiftUI
 
 enum SectionType {
-    case ceo, athletes, celebrities
+    case ceo, athletes, celebrities, other
 }
 
 class ContactSource: UITableViewDiffableDataSource<SectionType, Contact> {
@@ -32,7 +32,31 @@ class DiffableTableViewController: UITableViewController {
         navigationItem.title = "Contacts"
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        setupNavigation()
         setupSource()
+    }
+    
+    fileprivate func setupNavigation() {
+        navigationItem.rightBarButtonItem = .init(title: "Add", style: .plain, target: self, action: #selector(handleAddContact))
+    }
+    
+    @objc func handleAddContact() {
+        let contactFormView = ContactFormView { (name, sectionType)  in
+            self.dismiss(animated: true)
+            
+            var snapshot = self.source.snapshot()
+            
+            snapshot.appendItems([
+                .init(name: name, image: "https://res.cloudinary.com/apilama/image/fetch/f_auto,c_thumb,q_auto,w_300,h_300/https://s3-us-west-2.amazonaws.com/orfium-public/images/profiles/c88175d44b894f3183ed5c7ce816b907.jpg")
+            ], toSection: sectionType)
+            
+            self.source.apply(snapshot)
+        }
+        let hostingController = UIHostingController(rootView: contactFormView)
+        
+        present(hostingController, animated: true)
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

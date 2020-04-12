@@ -11,6 +11,7 @@
 		4D45FCA224431970008B301E /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45FCA124431970008B301E /* ContactViewModel.swift */; };
 		4D45FCA4244319CD008B301E /* ContactRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45FCA3244319CD008B301E /* ContactRowView.swift */; };
 		4D45FCA724431A90008B301E /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4D45FCA624431A90008B301E /* KingfisherSwiftUI */; };
+		4D45FCA924432F57008B301E /* ContactFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D45FCA824432F56008B301E /* ContactFormView.swift */; };
 		4D8889F1244076B1006B0DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8889F0244076B1006B0DE1 /* AppDelegate.swift */; };
 		4D8889F3244076B1006B0DE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8889F2244076B1006B0DE1 /* SceneDelegate.swift */; };
 		4D8889F5244076B1006B0DE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8889F4244076B1006B0DE1 /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 		4D45FC9F2443194C008B301E /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		4D45FCA124431970008B301E /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		4D45FCA3244319CD008B301E /* ContactRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRowView.swift; sourceTree = "<group>"; };
+		4D45FCA824432F56008B301E /* ContactFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormView.swift; sourceTree = "<group>"; };
 		4D8889ED244076B1006B0DE1 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8889F0244076B1006B0DE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D8889F2244076B1006B0DE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				4D8889F4244076B1006B0DE1 /* ContentView.swift */,
 				4D888A06244084EB006B0DE1 /* ContactCell.swift */,
 				4D45FCA3244319CD008B301E /* ContactRowView.swift */,
+				4D45FCA824432F56008B301E /* ContactFormView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				4D888A07244084EB006B0DE1 /* ContactCell.swift in Sources */,
 				4D45FCA4244319CD008B301E /* ContactRowView.swift in Sources */,
 				4D45FCA224431970008B301E /* ContactViewModel.swift in Sources */,
+				4D45FCA924432F57008B301E /* ContactFormView.swift in Sources */,
 				4D8889F1244076B1006B0DE1 /* AppDelegate.swift in Sources */,
 				4D45FCA02443194C008B301E /* Contact.swift in Sources */,
 				4D8889F3244076B1006B0DE1 /* SceneDelegate.swift in Sources */,
