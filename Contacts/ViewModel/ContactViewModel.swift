@@ -11,4 +11,5 @@ import Foundation
 class ContactViewModel: ObservableObject {
     @Published var name = ""
     @Published var image = ""
+    @Published var isFavourite: Bool = false
 }

@@ -25,7 +25,7 @@ struct ContactRowView: View {
             
             Text(viewModel.name)
             Spacer()
-            Image(systemName: "star")
+            Image(systemName: viewModel.isFavourite ? "star.fill" : "star")
         }.padding(20)
     }
 }

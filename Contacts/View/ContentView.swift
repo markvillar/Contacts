@@ -24,6 +24,7 @@ class DiffableTableViewController: UITableViewController {
         let cell = ContactCell(style: .default, reuseIdentifier: nil)
         cell.viewModel.name = contact.name
         cell.viewModel.image = contact.image
+        cell.viewModel.isFavourite = contact.isFavourite
         return cell
     }
     
@@ -35,6 +36,7 @@ class DiffableTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
             completion(true)
             
@@ -46,7 +48,23 @@ class DiffableTableViewController: UITableViewController {
             
             self.source.apply(snapshot)
         }
-        return .init(actions: [deleteAction])
+        
+        let favouriteAction = UIContextualAction(style: .normal, title: "Favourite") { (_, _, completion) in
+            completion(true)
+            
+            var snapshot = self.source.snapshot()
+            
+            guard let contact = self.source.itemIdentifier(for: indexPath) else { return }
+            
+            contact.isFavourite.toggle()
+            
+            snapshot.reloadItems([contact])
+            
+            self.source.apply(snapshot)
+            
+        }
+        
+        return .init(actions: [deleteAction, favouriteAction])
     }
     
     func setupSource() {

@@ -8,7 +8,13 @@
 
 import Foundation
 
-struct Contact: Hashable {
+class Contact: NSObject {
     let name: String
     let image: String
+    var isFavourite: Bool = false
+    
+    init(name: String, image: String) {
+        self.name = name
+        self.image = image
+    }
 }
