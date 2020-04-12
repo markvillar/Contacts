@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import KingfisherSwiftUI
 
 struct ContactRowView: View {
     
@@ -14,8 +15,14 @@ struct ContactRowView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "person")
-            //            KFImage(URL(string: "https://www.biography.com/.image/t_share/MTY2MzU3Nzk2OTM2MjMwNTkx/elon_musk_royal_society.jpg"))
+            KFImage(URL(string: viewModel.image))
+                .renderingMode(.original)
+                .resizable()
+                .frame(width: 60, height: 60, alignment: .center)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                .shadow(radius: 1)
+            
             Text(viewModel.name)
             Spacer()
             Image(systemName: "star")

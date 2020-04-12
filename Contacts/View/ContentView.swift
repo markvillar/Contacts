@@ -17,6 +17,7 @@ class DiffableTableViewController: UITableViewController {
     lazy var source: UITableViewDiffableDataSource<SectionType, Contact> = .init(tableView: self.tableView) { (_, indexPath, contact) -> UITableViewCell? in
         let cell = ContactCell(style: .default, reuseIdentifier: nil)
         cell.viewModel.name = contact.name
+        cell.viewModel.image = contact.image
         return cell
     }
     
