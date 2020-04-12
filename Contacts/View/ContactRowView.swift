@@ -20,8 +20,8 @@ struct ContactRowView: View {
                 .resizable()
                 .frame(width: 60, height: 60, alignment: .center)
                 .clipShape(Circle())
-                .overlay(Circle().stroke(Color.white, lineWidth: 2))
-                .shadow(radius: 1)
+                .overlay(Circle().stroke(Color.black, lineWidth: 0.5))
+                .shadow(radius: 0.5)
             
             Text(viewModel.name)
             Spacer()
