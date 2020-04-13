@@ -31,6 +31,7 @@ class DiffableTableViewController: UITableViewController {
     override func viewDidLoad() {
         navigationItem.title = "Contacts"
         navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.contentInsetAdjustmentBehavior = .automatic
         
         setupNavigation()
         setupSource()
